@@ -73,10 +73,10 @@ def update_course(request, id):
 def delete_student(request, id):
     student=get_object_or_404(Student, id=id)
     student.delete()
-    return Response("student-delete-successfully", status=status.HTTP_200_OK)
+    return Response("student-delete-successfully", status=status.HTTP_204_NO_CONTENT)
 
 @api_view(["DELETE"])
 def delete_course(request, id):
     course=get_object_or_404(Course, id=id)
     course.delete()
-    return Response("Course-remove-successfully", status=status.HTTP_200_OK)
+    return Response("Course-remove-successfully", status=status.HTTP_204_NO_CONTENT)
